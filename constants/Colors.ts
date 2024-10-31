@@ -19,6 +19,7 @@ export const Colors = {
     subtitle: "#A8A8A9",
     background: "#FFFFFF",
     error: "#FD515F",
+    otpBg: "rgba(196, 196, 196, 0.2)",
   },
   dark: {
     primary: "#E0AB36",
@@ -32,5 +33,6 @@ export const Colors = {
     subtitle: "#A8A8A9",
     background: "#FFFFFF",
     error: "#FD515F",
+    otpBg: "rgba(196, 196, 196, 0.2)",
   },
 };

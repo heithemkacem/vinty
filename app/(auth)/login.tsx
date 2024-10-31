@@ -12,7 +12,7 @@ import { useSession } from "@/context/ctx";
 import { useRouter } from "expo-router";
 import { Formik } from "formik";
 
-import { StyleSheet, useColorScheme } from "react-native";
+import { useColorScheme } from "react-native";
 import { LoginSchema } from "@/util/validators/auth";
 import { ThemedText } from "@/components/ThemedText";
 import { Colors } from "@/constants/Colors";
@@ -26,9 +26,7 @@ const Login = () => {
     }),
     []
   );
-  const handleLogin = () => {
-    // Handle login logic
-  };
+
   const theme = useColorScheme();
   const router = useRouter();
   return (
@@ -44,7 +42,7 @@ const Login = () => {
           console.log(values);
           signIn();
           setSubmitting(false);
-          router.replace("/(dashboard)/");
+          router.push("/(dashboard)/");
         }}
         //validationSchema={LoginSchema}
       >
@@ -111,85 +109,5 @@ const Login = () => {
     </MainContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    marginVertical: 10,
-  },
-  subtitle: {
-    fontSize: 14,
-    textAlign: "center",
-    marginBottom: 20,
-  },
-  input: {
-    width: "100%",
-    height: 50,
-    borderColor: "gray",
-    borderWidth: 1,
-    borderRadius: 5,
-    paddingHorizontal: 10,
-    marginBottom: 15,
-  },
-  checkboxContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginBottom: 20,
-  },
-  checkbox: {
-    width: 20,
-    height: 20,
-    borderColor: "gray",
-    borderWidth: 1,
-    borderRadius: 5,
-    marginRight: 10,
-  },
-  checkboxLabel: {
-    fontSize: 14,
-  },
-  button: {
-    backgroundColor: "orange",
-    padding: 15,
-    borderRadius: 5,
-    alignItems: "center",
-    width: "100%",
-    marginBottom: 15,
-  },
-  buttonText: {
-    color: "white",
-    fontWeight: "bold",
-  },
-  forgotPassword: {
-    marginBottom: 20,
-    color: "blue",
-  },
-  signupText: {
-    fontSize: 14,
-    textAlign: "center",
-    marginBottom: 20,
-  },
-  signupLink: {
-    color: "blue",
-    fontWeight: "bold",
-  },
-  orText: {
-    marginVertical: 20,
-    textAlign: "center",
-  },
-  socialButtonsContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    width: "100%",
-  },
-  socialButton: {
-    flex: 1,
-    backgroundColor: "lightgray",
-    padding: 15,
-    borderRadius: 5,
-    alignItems: "center",
-    marginHorizontal: 5,
-  },
-});
 
 export default Login;

@@ -11,11 +11,12 @@ export const ValidateEmail = () => {
     email: yup.string().email("invalidEmail").required("The email is required"),
   });
 };
-export const CodeValidation = () => {
-  return yup.object().shape({
-    code: yup.string().required("The code is required"),
-  });
-};
+export const CodeValidation = yup.object().shape({
+  otp: yup
+    .string()
+    .required("The OTP is required")
+    .matches(/^\d{6}$/, "The OTP must be a 6-digit number"),
+});
 export const ResetPasswordSchema = () => {
   return yup.object().shape({
     password: yup
