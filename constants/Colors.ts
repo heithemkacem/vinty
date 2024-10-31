@@ -14,9 +14,11 @@ export const Colors = {
     lightGray: "#B8B8B8",
     gray: "#575757",
     darkGray: "#6C7278",
+    graySubtitle: "#575757",
     black: "#252525",
     subtitle: "#A8A8A9",
     background: "#FFFFFF",
+    error: "#FD515F",
   },
   dark: {
     primary: "#E0AB36",
@@ -25,8 +27,10 @@ export const Colors = {
     lightGray: "#B8B8B8",
     gray: "#575757",
     darkGray: "#6C7278",
+    graySubtitle: "#575757",
     black: "#252525",
     subtitle: "#A8A8A9",
     background: "#FFFFFF",
+    error: "#FD515F",
   },
 };

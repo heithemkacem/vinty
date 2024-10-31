@@ -7,11 +7,12 @@ import { LinearGradient } from "expo-linear-gradient"; // For gradient backgroun
 import { Colors } from "@/constants/Colors";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import Bottomsheet from "@/components/bottom-sheet/BottomSheet";
+import { useRouter } from "expo-router";
 
 const HomeScreen = () => {
   const theme = useColorScheme();
   const [isBottomSheetVisible, setBottomSheetVisible] = useState(false); // State for bottom sheet visibility
-
+  const router = useRouter();
   return (
     <GestureHandlerRootView>
       <LinearGradient
@@ -36,7 +37,9 @@ const HomeScreen = () => {
           />
           <DefaultButtonNoBackground
             title="Create an account"
-            onPress={() => {}}
+            onPress={() => {
+              router.push("/(auth)/signup");
+            }}
             color={Colors[theme ?? "light"].black}
           />
           <ThemedText

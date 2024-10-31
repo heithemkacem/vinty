@@ -10,6 +10,7 @@ import { ThemedText } from "../ThemedText"; // Import your components
 import DefaultButton from "../butttons/Default";
 import DefaultButtonNoBackground from "../butttons/DefaultButtonNoBackground";
 import { IoniconsIcon } from "../icons/Ionicon";
+import { useRouter } from "expo-router";
 
 const { height: SCREEN_HEIGHT } = Dimensions.get("window");
 
@@ -59,7 +60,7 @@ export default function Bottomsheet({ isVisible, onClose }: BottomsheetProps) {
       translateY.value = withSpring(SCREEN_HEIGHT);
     }
   }, [isVisible]);
-
+  const router = useRouter();
   return (
     <>
       <Animated.View
@@ -76,10 +77,17 @@ export default function Bottomsheet({ isVisible, onClose }: BottomsheetProps) {
               <ThemedText type="bold-20" style={{ marginBottom: 10 }}>
                 What type of account would you like to Login?
               </ThemedText>
-              <DefaultButton title="User" onPress={() => {}} />
+              <DefaultButton
+                title="User"
+                onPress={() => {
+                  router.push("/(auth)/login");
+                }}
+              />
               <DefaultButtonNoBackground
                 title="Vending Machine Owner"
-                onPress={() => {}}
+                onPress={() => {
+                  router.push("/(auth)/login");
+                }}
               />
             </View>
           </View>
