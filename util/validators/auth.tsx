@@ -60,7 +60,6 @@ export const SignupSchema = () => {
       .required("Confirm password is required"),
   });
 };
-
 export const ForgetPasswordSchema = () => {
   return yup.object().shape({
     email: yup.string().email("invalidEmail").required("The email is required"),

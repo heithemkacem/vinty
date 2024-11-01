@@ -17,51 +17,68 @@ import { ThemedText } from "@/components/ThemedText";
 import { Colors } from "@/constants/Colors";
 import Indicator from "@/components/common/Indicator";
 import ScreenMarker from "@/components/common/ScreenMarker";
+import OTPHeader from "@/components/headers/OTPHeader";
+import OTPInput from "@/components/inputs/OTPInput";
 
-const ForgetPassword = () => {
+const ResetPasswordOtp = () => {
   const initialValues = useMemo(
     () => ({
-      email: "",
+      otp: "",
     }),
     []
   );
-
   const theme = useColorScheme();
   const router = useRouter();
   return (
     <MainContainer>
       <Logo />
-      <Indicator page={0} />
-      <ScreenMarker
-        image={require("@/assets/images/ResetPassword/forget.png")}
-      />
-      <AuthHeader
-        text="Forget Password"
-        subtitle="Easily reset your password to regain access to your account and continue enjoying Vinty’s services."
-      />
+      <Indicator page={1} />
+      <ScreenMarker image={require("@/assets/images/ResetPassword/otp.png")} />
+      <OTPHeader email="heithem.kacem@gmail.com" text="Enter OTP" />
       <Formik
         initialValues={initialValues}
         onSubmit={(values, { setSubmitting }) => {
-          router.push("/(auth)/reset-password-otp");
           console.log(values);
+          router.push("/(auth)/reset-password");
         }}
-        // validationSchema={ForgetPasswordSchema}
+        //validationSchema={CodeValidation}
       >
         {({ handleChange, handleSubmit, values, errors, touched }) => (
           <ThemedView style={{ paddingHorizontal: 10 }}>
-            <TextInput
-              onChangeText={handleChange("email")}
-              value={values.email}
-              placeholder="E-mail"
-              error={touched.email && errors.email}
+            <OTPInput
+              onOtpChange={handleChange("otp")}
+              otpValue={values.otp}
+              editable={true}
+              error={touched.otp && errors.otp}
             />
-
+            <ThemedText
+              type="regular-12"
+              style={{ textAlign: "center", marginTop: 20 }}
+            >
+              Didn't receive the code?{" "}
+              <ThemedText
+                style={{ textDecorationLine: "underline" }}
+                type="bold-12"
+              >
+                Resend Again
+              </ThemedText>
+            </ThemedText>
+            <ThemedText
+              type="regular-12"
+              style={{
+                textAlign: "center",
+                color: Colors[theme ?? "light"].darkGray,
+                marginTop: 10,
+              }}
+            >
+              Request new code in 00:30s
+            </ThemedText>
             <DefaultButton
               style={{ marginTop: 50 }}
               size="large"
               isSubmitting={false}
               onPress={handleSubmit}
-              title="Continue"
+              title="Reset Password"
             />
           </ThemedView>
         )}
@@ -70,4 +87,4 @@ const ForgetPassword = () => {
   );
 };
 
-export default ForgetPassword;
+export default ResetPasswordOtp;

@@ -1,8 +1,5 @@
 import React, { useMemo } from "react";
 import DefaultButton from "@/components/buttons/Default";
-import CheckBoxWithLink from "@/components/common/CheckBoxWithLink";
-import SocialMediaLinks from "@/components/common/SocialMediaLinks";
-import TextWithLink from "@/components/common/TextWithLink";
 import { MainContainer } from "@/components/containers/MainContainer";
 import AuthHeader from "@/components/headers/AuthHeader";
 import TextInput from "@/components/inputs/TextInput";
@@ -12,16 +9,15 @@ import { useRouter } from "expo-router";
 import { Formik } from "formik";
 
 import { useColorScheme } from "react-native";
-import { ForgetPasswordSchema, LoginSchema } from "@/util/validators/auth";
-import { ThemedText } from "@/components/ThemedText";
-import { Colors } from "@/constants/Colors";
+import { ResetPasswordSchema } from "@/util/validators/auth";
 import Indicator from "@/components/common/Indicator";
 import ScreenMarker from "@/components/common/ScreenMarker";
 
-const ForgetPassword = () => {
+const ResetPassword = () => {
   const initialValues = useMemo(
     () => ({
-      email: "",
+      password: "",
+      confirmPassword: "",
     }),
     []
   );
@@ -31,37 +27,44 @@ const ForgetPassword = () => {
   return (
     <MainContainer>
       <Logo />
-      <Indicator page={0} />
+      <Indicator page={2} />
       <ScreenMarker
-        image={require("@/assets/images/ResetPassword/forget.png")}
+        image={require("@/assets/images/ResetPassword/reset.png")}
       />
       <AuthHeader
-        text="Forget Password"
-        subtitle="Easily reset your password to regain access to your account and continue enjoying Vinty’s services."
+        text="Reset password"
+        subtitle="Enter your new password, then confirm it to secure your account."
       />
       <Formik
         initialValues={initialValues}
         onSubmit={(values, { setSubmitting }) => {
-          router.push("/(auth)/reset-password-otp");
+          router.push("/(auth)/password-changed-success");
           console.log(values);
         }}
-        // validationSchema={ForgetPasswordSchema}
+        //validationSchema={ResetPasswordSchema}
       >
         {({ handleChange, handleSubmit, values, errors, touched }) => (
           <ThemedView style={{ paddingHorizontal: 10 }}>
             <TextInput
-              onChangeText={handleChange("email")}
-              value={values.email}
-              placeholder="E-mail"
-              error={touched.email && errors.email}
+              onChangeText={handleChange("password")}
+              value={values.password}
+              placeholder="New Password"
+              error={touched.password && errors.password}
+              isPassword={true}
             />
-
+            <TextInput
+              onChangeText={handleChange("confirmPassword")}
+              value={values.confirmPassword}
+              placeholder="Confirm New Password"
+              error={touched.confirmPassword && errors.confirmPassword}
+              isPassword={true}
+            />
             <DefaultButton
               style={{ marginTop: 50 }}
               size="large"
               isSubmitting={false}
               onPress={handleSubmit}
-              title="Continue"
+              title="Reset Password"
             />
           </ThemedView>
         )}
@@ -70,4 +73,4 @@ const ForgetPassword = () => {
   );
 };
 
-export default ForgetPassword;
+export default ResetPassword;

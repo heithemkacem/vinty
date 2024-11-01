@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import DefaultButton from "@/components/butttons/Default";
+import DefaultButton from "@/components/buttons/Default";
 import TextWithLink from "@/components/common/TextWithLink";
 import { MainContainer } from "@/components/containers/MainContainer";
 import AuthHeader from "@/components/headers/AuthHeader";

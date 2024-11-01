@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import DefaultButton from "@/components/butttons/Default";
+import DefaultButton from "@/components/buttons/Default";
 import CheckBoxWithLink from "@/components/common/CheckBoxWithLink";
 import SocialMediaLinks from "@/components/common/SocialMediaLinks";
 import TextWithLink from "@/components/common/TextWithLink";

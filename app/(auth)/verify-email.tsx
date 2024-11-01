@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo } from "react";
-import DefaultButton from "@/components/butttons/Default";
+import DefaultButton from "@/components/buttons/Default";
 import { MainContainer } from "@/components/containers/MainContainer";
 import Logo from "@/components/logo/Logo";
 import { ThemedView } from "@/components/ThemedView";

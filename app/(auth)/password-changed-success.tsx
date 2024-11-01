@@ -2,20 +2,23 @@ import { MainContainer } from "@/components/containers/MainContainer";
 import YouAreVintyImage from "@/components/logo/YouAreVinty";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
+import DefaultButton from "@/components/buttons/Default";
 import React, { useEffect } from "react";
 import { useRouter } from "expo-router"; // Or your preferred navigation library
+import { Colors } from "react-native/Libraries/NewAppScreen";
+import { useColorScheme } from "react-native";
 
-const YouAreVinty = () => {
+const PasswordChangedSuccess = () => {
   const router = useRouter();
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      router.replace("/(dashboard)/"); // Replace with your desired route
-    }, 3000); // 5000 milliseconds = 5 seconds
+      router.replace("/(auth)/login"); // Replace with your desired route
+    }, 1000000000); // 10000 milliseconds = 5 seconds
 
     return () => clearTimeout(timer); // Clear timeout if the component unmounts early
   }, [router]);
-
+  const theme = useColorScheme();
   return (
     <MainContainer>
       <ThemedView
@@ -28,14 +31,30 @@ const YouAreVinty = () => {
       >
         <YouAreVintyImage />
         <ThemedText
-          type="bold-20"
+          type="bold-30"
           style={{ textAlign: "center", marginTop: 20 }}
         >
-          You are a Vinty now! You can start navigating.
+          Password changed
         </ThemedText>
+
+        <ThemedText
+          type="regular-16"
+          style={{
+            textAlign: "center",
+            marginTop: 20,
+            color: Colors[theme ?? "light"].darkGray,
+          }}
+        >
+          Your password has been changed succesfully
+        </ThemedText>
+        <DefaultButton
+          style={{ marginTop: 50 }}
+          title="Back to login"
+          onPress={() => router.replace("/(auth)/login")}
+        />
       </ThemedView>
     </MainContainer>
   );
 };
 
-export default YouAreVinty;
+export default PasswordChangedSuccess;

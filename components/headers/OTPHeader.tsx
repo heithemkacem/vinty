@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     position: "relative",
     justifyContent: "flex-start",
     alignItems: "center",
-    paddingVertical: 30,
+    paddingVertical: 15,
     gap: 10,
   },
 });

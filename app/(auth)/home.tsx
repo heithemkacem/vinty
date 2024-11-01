@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { View, StyleSheet, Image, useColorScheme } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
-import DefaultButton from "@/components/butttons/Default";
-import DefaultButtonNoBackground from "@/components/butttons/DefaultButtonNoBackground";
+import DefaultButton from "@/components/buttons/Default";
+import DefaultButtonNoBackground from "@/components/buttons/DefaultButtonNoBackground";
 import { LinearGradient } from "expo-linear-gradient"; // For gradient background
 import { Colors } from "@/constants/Colors";
 import { GestureHandlerRootView } from "react-native-gesture-handler";

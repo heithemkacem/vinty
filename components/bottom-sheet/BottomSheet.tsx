@@ -7,8 +7,8 @@ import Animated, {
   withSpring,
 } from "react-native-reanimated";
 import { ThemedText } from "../ThemedText"; // Import your components
-import DefaultButton from "../butttons/Default";
-import DefaultButtonNoBackground from "../butttons/DefaultButtonNoBackground";
+import DefaultButton from "../buttons/Default";
+import DefaultButtonNoBackground from "../buttons/DefaultButtonNoBackground";
 import { IoniconsIcon } from "../icons/Ionicon";
 import { useRouter } from "expo-router";
 

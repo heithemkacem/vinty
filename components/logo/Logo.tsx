@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
     position: "relative",
     justifyContent: "flex-start",
     alignItems: "center",
+    marginVertical: 20,
   },
   image: {
     width: 194,

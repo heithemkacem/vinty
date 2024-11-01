@@ -15,7 +15,10 @@ export type ThemedTextProps = TextProps & {
     | "bold-32"
     | "semibold-12"
     | "regular-9"
-    | "semibold-9";
+    | "semibold-9"
+    | "regular-16"
+    | "bold-16"
+    | "bold-30";
 };
 
 export function ThemedText({
@@ -41,6 +44,9 @@ export function ThemedText({
         type === "semibold-12" ? styles.semiboldTwelve : undefined,
         type === "regular-9" ? styles.regularNine : undefined,
         type === "semibold-9" ? styles.semiboldNine : undefined,
+        type === "regular-16" ? styles.regularSixteen : undefined,
+        type === "bold-30" ? styles.boldThirteen : undefined,
+        type === "bold-16" ? styles.boldSixteen : undefined,
         style,
       ]}
       {...rest}
@@ -87,5 +93,17 @@ const styles = StyleSheet.create({
   semiboldNine: {
     fontSize: 9,
     fontFamily: "MontserratSemiBold",
+  },
+  regularSixteen: {
+    fontSize: 16,
+    fontFamily: "MontserratRegular",
+  },
+  boldThirteen: {
+    fontSize: 30,
+    fontFamily: "MontserratBold",
+  },
+  boldSixteen: {
+    fontSize: 16,
+    fontFamily: "MontserratBold",
   },
 });

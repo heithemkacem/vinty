@@ -2,7 +2,7 @@ import React from "react";
 import { ThemedView } from "../ThemedView";
 import { Colors } from "@/constants/Colors";
 import { Platform, StyleSheet, useColorScheme } from "react-native";
-import SocialMediaButton from "../butttons/SocialMedia";
+import SocialMediaButton from "../buttons/SocialMedia";
 import { IoniconsIcon } from "../icons/Ionicon";
 
 const SocialMediaLinks = () => {

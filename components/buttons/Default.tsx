@@ -43,7 +43,7 @@ const DefaultButton: React.FC<DefaultButtonProps> = ({
       ) : (
         <ThemedText
           style={[{ color: Colors[colorScheme ?? "dark"].white }]}
-          type="semi-bold-16"
+          type="bold-16"
         >
           {title}
         </ThemedText>
