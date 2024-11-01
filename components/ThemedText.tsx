@@ -57,6 +57,7 @@ export function ThemedText({
 const styles = StyleSheet.create({
   default: {
     fontSize: 16,
+    fontFamily: "MontserratRegular",
   },
   defaultSemiBold: {
     fontSize: 18,
