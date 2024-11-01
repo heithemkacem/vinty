@@ -14,8 +14,7 @@ const PasswordChangedSuccess = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       router.replace("/(auth)/login"); // Replace with your desired route
-    }, 1000000000); // 10000 milliseconds = 5 seconds
-
+    }, 10000);
     return () => clearTimeout(timer); // Clear timeout if the component unmounts early
   }, [router]);
   const theme = useColorScheme();

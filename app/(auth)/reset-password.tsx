@@ -9,7 +9,6 @@ import { useRouter } from "expo-router";
 import { Formik } from "formik";
 
 import { useColorScheme } from "react-native";
-import { ResetPasswordSchema } from "@/util/validators/auth";
 import Indicator from "@/components/common/Indicator";
 import ScreenMarker from "@/components/common/ScreenMarker";
 

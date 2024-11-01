@@ -1,18 +1,12 @@
 import React, { useMemo } from "react";
 import DefaultButton from "@/components/buttons/Default";
-import CheckBoxWithLink from "@/components/common/CheckBoxWithLink";
-import SocialMediaLinks from "@/components/common/SocialMediaLinks";
-import TextWithLink from "@/components/common/TextWithLink";
 import { MainContainer } from "@/components/containers/MainContainer";
-import AuthHeader from "@/components/headers/AuthHeader";
-import TextInput from "@/components/inputs/TextInput";
 import Logo from "@/components/logo/Logo";
 import { ThemedView } from "@/components/ThemedView";
 import { useRouter } from "expo-router";
 import { Formik } from "formik";
 
 import { useColorScheme } from "react-native";
-import { ForgetPasswordSchema, LoginSchema } from "@/util/validators/auth";
 import { ThemedText } from "@/components/ThemedText";
 import { Colors } from "@/constants/Colors";
 import Indicator from "@/components/common/Indicator";

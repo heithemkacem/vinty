@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemedView } from "../ThemedView";
-import { Image, StyleSheet, useColorScheme } from "react-native";
+import { StyleSheet, useColorScheme } from "react-native";
 import { ThemedText } from "../ThemedText";
 import { Colors } from "@/constants/Colors";
 type AuthHeaderProps = {
